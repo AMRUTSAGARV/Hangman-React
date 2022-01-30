@@ -58,6 +58,18 @@ useEffect(() => {
 }, [correctLetters, wrongLetters,playable]);   // adding array here it will only get call in the intial render.
 
  
+function playAgain() {
+  setPlayable(true);
+
+  //empty array:
+  setCorrectLetters([]);
+  setWrongLetters([]);
+
+  const random = Math.floor(Math.random() * words.length);
+  selectedWord = words[random];
+}
+
+
   return (
     <>
 <Header />
@@ -67,7 +79,7 @@ useEffect(() => {
   <Word selectedWord={selectedWord} correctLetters={correctLetters}/>
 
 </div>
-<Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} />
+<Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain}/>
     <Notification showNotification={showNotification}/>
     </>
   );
