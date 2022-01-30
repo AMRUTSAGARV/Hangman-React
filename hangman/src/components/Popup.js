@@ -1,12 +1,18 @@
 import React from 'react';
 
-function Popup() {
-  return (
-  <div className="popup-container" id="popup-container">
+const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable }) => {
+  let finalMessage = '';
+  let finalMessageRevealWord = '';
+  let playable =  true;
+    return (
+  <div className="popup-container" >
   <div className="popup">
-    <h2 id="final-message"></h2>
-    <h3 id="final-message-reveal-word"></h3>
-    <button id="play-button">Play Again</button>
+      <h2>{finalMessage}</h2>
+      <h3>{finalMessageRevealWord}</h3>
+      <button>Play Again</button>
+   
+
+
   </div>
 </div>
 );
